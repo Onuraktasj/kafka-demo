@@ -33,6 +33,20 @@ services:
     networks:
       - kafka-demo-network
 
+  customer-service:
+    build:
+      context: ./notification-service
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - SPRING_PROFILES_ACTIVE=prod
+    depends_on:
+      - kafka
+    networks:
+      - kafka-demo-network
+
   notification-service:
     build:
       context: ./notification-service
