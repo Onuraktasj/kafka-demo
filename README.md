@@ -1,10 +1,10 @@
-###Kafka Demo
+### Kafka Demo
 
 Bu proje, Spring Boot ve Kafka kullanarak basit bir mesajlaşma sistemi oluşturmayı amaçlamaktadır. Kafka kullanarak olay tabanlı bir mimari ile mesaj alışverişi yapılmaktadır.
 
-#Proje Yapısı
+## Proje Yapısı
 
-Proje, temel olarak üç ana bileşenden oluşmaktadır:
+**Proje, temel olarak üç ana bileşenden oluşmaktadır:**
 
 * **Order Service** Yeni siparişler oluşturur ve Kafka'ya bir olay yayınlar.
 
@@ -12,7 +12,7 @@ Proje, temel olarak üç ana bileşenden oluşmaktadır:
 
 * **Notification Service** Sipariş durumlarını dinler ve ilgili bildirimleri gönderir.
 
-#Gereksinimler
+## Gereksinimler
 
 Projeyi çalıştırmadan önce aşağıdaki bağımlılıkların sisteminizde yüklü olduğundan emin olun:
 
@@ -24,7 +24,7 @@ Docker (Opsiyonel, Kafka'yı çalıştırmak için önerilir)
 
 Maven
 
-#Kurulum ve Çalıştırma
+## Kurulum ve Çalıştırma
 
 **1. Kafka ve Zookeeper'ı Başlatma**
 
@@ -56,7 +56,7 @@ Aşağıdaki komutlarla Kafka konularını oluşturabilirsiniz:
 bin/kafka-topics.sh --create --topic order-topic --bootstrap-server localhost:9092
 bin/kafka-topics.sh --create --topic notification-topic --bootstrap-server localhost:9092
 
-#API Kullanımı
+## API Kullanımı
 
 Projede örnek REST API uç noktaları bulunmaktadır. Sipariş oluşturmak için aşağıdaki örnek isteği kullanabilirsiniz:
 
@@ -71,14 +71,14 @@ Content-Type: application/json
 
 Bu işlem, order-topic üzerinden bir mesaj yayınlayacaktır. Daha sonra Inventory Service ve Notification Service bu mesajı işleyecektir.
 
-#Log İzleme
+## Log İzleme
 
 Kafka mesajlarının işlendiğini görmek için aşağıdaki komutu kullanarak konuları dinleyebilirsiniz:
 
 bin/kafka-console-consumer.sh --topic order-topic --from-beginning --bootstrap-server localhost:9092
 bin/kafka-console-consumer.sh --topic notification-topic --from-beginning --bootstrap-server localhost:9092
 
-#Katkıda Bulunma
+## Katkıda Bulunma
 
 Projeye katkıda bulunmak isterseniz, aşağıdaki adımları takip edebilirsiniz:
 
