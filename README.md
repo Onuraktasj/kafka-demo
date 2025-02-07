@@ -1,4 +1,4 @@
-#Kafka Demo
+###Kafka Demo
 
 Bu proje, Spring Boot ve Kafka kullanarak basit bir mesajlaşma sistemi oluşturmayı amaçlamaktadır. Kafka kullanarak olay tabanlı bir mimari ile mesaj alışverişi yapılmaktadır.
 
